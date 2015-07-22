@@ -1,0 +1,52 @@
+<div class="container" data-ng-controller="TrainController">
+
+    <div class="alert alert-danger" data-ng-show="error">{{errorMessage}}</div>
+
+    <form role="form">
+        <div class="form-group">
+            <label class="control-label" for="inputEmail">Train Name</label> <input class="form-control" type="text" id="inputEmail" data-ng-model="train.name" placeholder="Train Name" required min="2">
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="inputEmail">Speed</label>
+            <div class="input-group">
+                <input class="form-control" type="text" id="inputSpeed" data-ng-model="train.speed" placeholder="Speed" required min="1"> <span class="input-group-addon">km/h</span>
+            </div>
+        </div>
+        <div class="checkbox">
+            <label class="checkbox"> <input type="checkbox" data-ng-model="train.diesel"> Is Diesel
+            </label>
+        </div>
+        <div class="form-group">
+            <button type="button" class="btn btn-primary" data-ng-disabled="!train.name || !train.speed" data-ng-hide="editMode" data-ng-click="addNewTrain(train)">Add Train</button>
+            <button type="button" class="btn btn-primary" data-ng-disabled="!train.name || !train.speed" data-ng-show="editMode" data-ng-click="updateTrain(train)">Save Train</button>
+            <button type="button" class="btn" data-ng-click="resetTrainForm()">Reset</button>
+        </div>
+    </form>
+    <hr />
+    <h3>Trains List</h3>
+    <div class="alert alert-info" data-ng-show="trains.length == 0">No trains found</div>
+    <table class="table table-bordered table-striped" data-ng-show="trains.length > 0">
+        <thead>
+            <tr>
+                <th style="text-align: center; width: 25px;">Id</th>
+                <th style="text-align: center;">Name</th>
+                <th style="text-align: center;">Speed</th>
+                <th style="text-align: center;">Diesel</th>
+                <th style="text-align: center;">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr data-ng-repeat="train in trains | orderBy:predicate">
+                <td style="text-align: center;">{{train.id}}</td>
+                <td>{{train.name}}</td>
+                <td>{{train.speed}}</td>
+                <td style="text-align: center; width: 20px;"><span data-ng-show="train.diesel" class="glyphicon glyphicon-ok"></span></td>
+                <td style="width: 120px; text-align: center;">
+                    <button class="btn btn-xs btn-danger" data-ng-click="removeTrain(train.id)">Remove</button>
+                    <button class="btn btn-xs btn-success" data-ng-click="editTrain(train)">Edit</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <button class="btn btn-danger" data-ng-show="trains.length > 1" data-ng-click="removeAllTrains()">Remove All Trains</button>
+</div>

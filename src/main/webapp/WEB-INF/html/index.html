@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Service Society App</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="resources/bootstrap/css/bootstrap.css" />
+<link rel="stylesheet" href="resources/nanogallery/css/nanogallery.min.css" />
+<link rel="stylesheet" href="resources/css/app.css" />
+
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom-header cbp-af-header">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#/home">SAMNSS</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="#/home">Home</a></li>
+                    <li><a href="#/aboutus">About Us</a></li>
+                    <li><a href="#/cars">Committee</a></li>
+                    <li><a href="#/users">Register</a></li>
+                    <li><a href="#/trains">Matrimony</a></li>
+                    <li><a href="#/railwaystations">Contac tUs</a></li>
+                    <li><a href="#/settings">Settings</a></li>
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+    </nav>
+</header>
+<div id="mainView" data-ng-view></div>
+<div class="navbar navbar-default navbar-fixed-bottom navbar-custom-footer">
+    <div class="container"> 
+     <p>© Company 2015</p>
+    </div>
+</div>
+
+
+    <!--     <script src="resources/js/lib/angular/angular.js"></script>
+    <script src="resources/js/lib/angular/angular-route.js"></script>
+    <script src="resources/js/app.js"></script>
+    <script src="resources/js/services.js"></script>
+    <script src="resources/js/controllers/RailwayStationController.js"></script>
+    <script src="resources/js/controllers/CarController.js"></script>
+    <script src="resources/js/controllers/TrainController.js"></script>
+    <script src="resources/js/controllers/UserController.js"></script>
+    <script src="resources/js/filters.js"></script>
+    <script src="resources/js/directives.js"></script> -->
+
+    <script src="resources/js/lib/requirejs/require.js" data-main="resources/js/app/main.js"></script>
+
+</body>
+</html>

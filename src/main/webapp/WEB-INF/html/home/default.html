@@ -1,0 +1,26 @@
+
+<div class="row row-offcanvas row-offcanvas-right">
+    <section class="col-xs-12 col-sm-12">
+        <div data-ng-include="'home/layout/carousel-layout'"></div>
+        <div class="row">
+            <div id="eventContent" data-ng-repeat="content in contentlist" class="col-xs-6 col-lg-6" data-ng-class="{true:'col-xs-height', false:''}[$first]">
+                <div class="row">
+                    <h2 class="col-xs-12 col-lg-12">{{ content.name }}</h2>
+                </div>
+                <div class="row">
+                    <div data-ng-class="{true:'col-xs-12 col-lg-12', false:'col-xs-8 col-lg-8'}[$first]">
+                        <p class="truncate-multiline-paragraph">{{ content.description }}</p>
+                        <p>
+                            <a class="btn btn-default" href="#" role="button">View details »</a>
+                        </p>
+                    </div>
+                    <div data-ng-if="!$first" class="col-xs-4 col-lg-4">
+                        <img data-ng-if="content.icon" id="contentImage" data-ng-src="data:image/JPEG;base64,{{content.icon}}" style="background-size: contain; background-position: center; height: 140px; width: 100%; " /> 
+                        <img data-ng-if="!content.icon" alt="image" src="resources/images/no-image.gif" style="background-size: contain; background-position: center; height: 140px; width: 100%;" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>

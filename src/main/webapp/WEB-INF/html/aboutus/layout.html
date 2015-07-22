@@ -1,0 +1,56 @@
+<div class="container" data-ng-controller="AboutUsController" data-ng-init="initialize()">
+    <div class="alert alert-danger" data-ng-show="error">{{errorMessage}}</div>
+    <form role="form">
+        <div class="form-group">
+            <label for="contentName">Content Name</label> <input class="form-control" type="text" id="contentName" data-ng-model="content.name" placeholder="Content Name" required min="2">
+        </div>
+        <div class="form-group">
+            <label for="contentDescription">Description</label> <input class="form-control" type="text" id="contentDescription" data-ng-model="content.description" placeholder="Description" required min="1">
+        </div>
+
+        <div class="form-group">
+            <div id="imageImportDiv">
+                <input name="imageIcon" id="imageIcon" type="file" />
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <img data-ng-if="content.icon" id="contentImage" data-ng-src="data:image/JPEG;base64,{{content.icon}}" style="background-size:contain; background-position:center; min-height:200px;height:300px;" />
+                    <img data-ng-if="!content.icon" alt="image" src="resources/images/no-image.gif" style="background-size:contain; background-position:center;  "/>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="controls">
+                <button type="button" class="btn btn-primary" data-ng-disabled="!content.name || !content.description" data-ng-hide="editMode" data-ng-click="addNewContent(content)">Add Content</button>
+                <button type="button" class="btn btn-primary" data-ng-disabled="!content.name || !content.description" data-ng-show="editMode" data-ng-click="updateContent(content)">Save Content</button>
+                <button type="button" class="btn" data-ng-click="resetContentForm()">Reset</button>
+            </div>
+        </div>
+    </form>
+    <hr />
+    <h3>Contents List</h3>
+    <div class="alert alert-info" data-ng-show="contents.length == 0">No contents found</div>
+    <table class="table table-bordered table-striped" data-ng-show="contents.length > 0">
+        <thead>
+            <tr>
+                <th style="text-align: center; width: 25px;">Id</th>
+                <th style="text-align: center;">Name</th>
+                <th style="text-align: center;">Description</th>
+                <th style="text-align: center;">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr data-ng-repeat="content in contents | orderBy:predicate">
+                <td style="text-align: center;">{{content.id}}</td>
+                <td>{{content.name}}</td>
+                <td>{{content.description}}</td>
+                <td style="width: 120px; text-align: center;">
+                    <button class="btn btn-xs btn-danger" data-ng-click="removeContent(content.id)">Remove</button>
+                    <button class="btn btn-xs btn-success" data-ng-click="editContent(content)">Edit</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <button class="btn btn-danger" data-ng-show="contents.length > 1" data-ng-click="removeAllContents()">Remove All Contents</button>
+</div>

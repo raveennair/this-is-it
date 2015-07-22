@@ -1,0 +1,138 @@
+/* columns of same height styles */
+html {
+    background: none;
+    background-size: cover;
+}
+
+body {
+    padding-top: 80px;
+    background-color: transparent;
+    padding-bottom: 80px;
+}
+
+.row-same-height {
+    display: table;
+    width: 100%;
+}
+
+.container-xs-height {
+    display: table;
+    padding-left: 0px;
+    padding-rigt: 0px;
+}
+
+.row-xs-height {
+    display: table-row;
+}
+
+.col-xs-height {
+    display: table-cell;
+    float: none !important;
+}
+
+@media ( min-width : 768px) {
+    .container-sm-height {
+        display: table;
+        padding-left: 0px;
+        padding-rigt: 0px;
+    }
+    .row-sm-height {
+        display: table-row;
+    }
+    .col-sm-height {
+        display: table-cell;
+        float: none !important;
+    }
+}
+
+@media ( min-width : 992px) {
+    .container-md-height {
+        display: table;
+        padding-left: 0px;
+        padding-rigt: 0px;
+    }
+    .row-md-height {
+        display: table-row;
+    }
+    .col-md-height {
+        display: table-cell;
+        float: none !important;
+    }
+}
+
+@media ( min-width : 1200px) {
+    .container-lg-height {
+        display: table;
+        padding-left: 0px;
+        padding-rigt: 0px;
+    }
+    .row-lg-height {
+        display: table-row;
+    }
+    .col-lg-height {
+        display: table-cell;
+        float: none !important;
+    }
+}
+
+.list-group-item.active,.list-group-item.active:hover,.list-group-item.active:focus {
+    background-color: #118ed9;
+}
+
+/* nav bar */
+.navbar-custom-header {
+    padding: 10px 15px;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.navbar-custom-footer {
+    background-color: #152737;
+    color: #ddd;
+    text-align: center;
+    min-height: 30px
+}
+
+.cbp-af-header-shrink {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    opacity: 0.9;
+}
+
+/* Image */
+.img-responsive {
+    margin: 0px auto;
+    border: 3px solid darkblue;
+    box-shadow: rgba(0, 0, 0, 0.5) 10px 10px 60px;
+}
+
+.fill-screen {
+    background-size: cover;
+    background-position: center;
+}
+
+/* Carousel */
+#carousel {
+    margin: 40px 0px;
+}
+
+#carousel img {
+    width: 100%;
+    height: 600px;
+}
+
+/* List box */
+.list-group-item.active,.list-group-item.active:hover,.list-group-item.active:focus {
+    background-color: #118ed9;
+}
+
+.truncate-multiline-paragraph {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+}
+
+#eventContent {
+    padding: 0px 20px;
+}
